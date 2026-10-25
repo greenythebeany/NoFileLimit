@@ -13,12 +13,13 @@
 .vc-nfl-card {
     padding: 10px 12px;
     border-radius: 8px;
-    background: var(--background-floating);
+    background: var(--background-surface-high);
     box-shadow: var(--elevation-high);
-    color: var(--text-normal);
+    color: var(--text-default);
 }
 
 .vc-nfl-name {
+    color: var(--text-strong);
     overflow: hidden;
     font-weight: 600;
     font-size: 14px;
@@ -49,9 +50,10 @@
     max-width: 550px;
     margin-top: 8px;
     overflow: hidden;
-    border: 1px solid var(--background-modifier-accent);
+    border: 1px solid var(--border-subtle);
     border-radius: 8px;
-    background: var(--background-secondary);
+    background: var(--background-base-lower);
+    color: var(--text-default);
 }
 
 .vc-nfl-media {
