@@ -6,8 +6,14 @@ An [Equicord](https://github.com/Equicord/Equicord) userplugin that lets you sen
 
 - Drop, paste or attach a file that is over your upload limit. Instead of the "file too large" popup, the plugin splits it into parts just under the limit and sends them automatically, 10 parts per message.
 - A small `nfl_<id>.json` manifest is sent with the last message. It holds the original file name, size and a SHA-256 hash of every part.
-- Anyone with the plugin gets a **Download merged file** button on that message. It finds the parts, checks every hash and saves the original file.
+- Anyone with the plugin sees one attachment with the original file name instead of the parts. Videos, images and audio play right in chat, and the **Download** button saves the original file. Every part is checked against its hash.
 - Files under the limit upload normally.
+
+## Settings
+
+- **Split size (MB)**: size of each part. `0` picks the largest size your upload limit allows.
+- **Show progress**: shows upload and download progress in the top right corner.
+- **Auto load (MB)**: videos, images and audio up to this size load automatically so they play in chat. `0` means you always click **Play** first.
 
 People without the plugin can merge the parts by hand.
 
