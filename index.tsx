@@ -259,9 +259,13 @@ async function downloadParts(message: Message, manifest: Manifest, key: string, 
     return file;
 }
 
+const IMAGE_TYPES = new Set(["image/png", "image/jpeg", "image/gif", "image/webp", "image/avif", "image/bmp"]);
+
 function getMediaKind(type: string) {
     const kind = type.split("/")[0];
-    return kind === "video" || kind === "image" || kind === "audio" ? kind : null;
+    if (kind === "image") return IMAGE_TYPES.has(type) ? kind : null;
+    if (kind !== "video" && kind !== "audio") return null;
+    return document.createElement(kind).canPlayType(type) ? kind : null;
 }
 
 const SplitAttachment = ErrorBoundary.wrap(({ message, manifestUrl }: { message: Message; manifestUrl: string; }) => {
